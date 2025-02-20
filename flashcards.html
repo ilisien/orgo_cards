@@ -13,12 +13,17 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
         
         .page {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             width: 8.5in;
             height: 11in;
             page-break-after: always;
@@ -28,7 +33,6 @@
             display: grid;
             grid-template-columns: repeat(3, 2.5in);
             grid-template-rows: repeat(3, 3.5in);
-            gap: 0.2in;
         }
 
         .flashcard {
