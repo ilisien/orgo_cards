@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <title>Flashcards</title>
     <style>
-        @page { size: letter; margin: 0; }
-        body { font-family: Arial, sans-serif; text-align: center; margin: 0;}
+        @page {
+            size: letter;
+            margin: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
         
         .page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 8.5in;
+            height: 11in;
+            page-break-after: always;
+        }
+
+        .flashcard_wrapper {
             display: grid;
             grid-template-columns: repeat(3, 2.5in);
             grid-template-rows: repeat(3, 3.5in);
             gap: 0.2in;
-            width: 8.5in;
-            height: 11in;
-            page-break-after: always;
         }
 
         .flashcard {
@@ -39,28 +53,32 @@
 
     <!-- First Page: Fronts -->
     <div class="page">
-        <div class="flashcard">Front 1</div>
-        <div class="flashcard">Front 2</div>
-        <div class="flashcard">Front 3</div>
-        <div class="flashcard">Front 4</div>
-        <div class="flashcard">Front 5</div>
-        <div class="flashcard">Front 6</div>
-        <div class="flashcard">Front 7</div>
-        <div class="flashcard">Front 8</div>
-        <div class="flashcard">Front 9</div>
+        <div class="flashcard_wrapper">
+            <div class="flashcard">Front 1</div>
+            <div class="flashcard">Front 2</div>
+            <div class="flashcard">Front 3</div>
+            <div class="flashcard">Front 4</div>
+            <div class="flashcard">Front 5</div>
+            <div class="flashcard">Front 6</div>
+            <div class="flashcard">Front 7</div>
+            <div class="flashcard">Front 8</div>
+            <div class="flashcard">Front 9</div>
+        </div>
     </div>
 
     <!-- Second Page: Backs (Mirrored Order for Printing) -->
     <div class="page">
-        <div class="flashcard"><img src="back9.png" alt="Back 9"></div>
-        <div class="flashcard"><img src="back8.png" alt="Back 8"></div>
-        <div class="flashcard"><img src="back7.png" alt="Back 7"></div>
-        <div class="flashcard"><img src="back6.png" alt="Back 6"></div>
-        <div class="flashcard"><img src="back5.png" alt="Back 5"></div>
-        <div class="flashcard"><img src="back4.png" alt="Back 4"></div>
-        <div class="flashcard"><img src="back3.png" alt="Back 3"></div>
-        <div class="flashcard"><img src="back2.png" alt="Back 2"></div>
-        <div class="flashcard"><img src="back1.png" alt="Back 1"></div>
+        <div class="flashcard_wrapper">
+            <div class="flashcard"><img src="back9.png" alt="Back 9"></div>
+            <div class="flashcard"><img src="back8.png" alt="Back 8"></div>
+            <div class="flashcard"><img src="back7.png" alt="Back 7"></div>
+            <div class="flashcard"><img src="back6.png" alt="Back 6"></div>
+            <div class="flashcard"><img src="back5.png" alt="Back 5"></div>
+            <div class="flashcard"><img src="back4.png" alt="Back 4"></div>
+            <div class="flashcard"><img src="back3.png" alt="Back 3"></div>
+            <div class="flashcard"><img src="back2.png" alt="Back 2"></div>
+            <div class="flashcard"><img src="back1.png" alt="Back 1"></div>
+        </div> 
     </div>
 
 </body>
