@@ -7,9 +7,7 @@ import pubchempy as pcp
 def smiles_to_iupac(smiles):
     """Convert a SMILES string to an IUPAC name."""
     mol = Chem.MolFromSmiles(smiles)
-    if mol is None:
-        raise ValueError("Invalid SMILES string.")
-    inchi = MolToInchi(mol)  # Convert to InChI first
+    inchi = MolToInchi(mol)
     compound = pcp.get_compounds(inchi, 'inchi')
     iupac_name = compound[0].iupac_name if compound else "Not found"
     return iupac_name
@@ -20,6 +18,10 @@ def iupac_to_smiles(iupac_name):
     smiles = compounds[0].canonical_smiles if compounds else "Not found"
     return smiles
 
+def draw_molecule(smiles):
+    mol = Chem.MolFromSmiles(smiles)
+    return Draw.MolToImage(mol)
+
 if __name__ == "__main__":
     smiles = "CO"
     print(f"SMILES: {smiles}")
@@ -29,3 +31,5 @@ if __name__ == "__main__":
 
     new_smiles = iupac_to_smiles(iupac_name)
     print(f"Reconstructed SMILES: {new_smiles}")
+
+    draw_molecule("C1=CC=C(C=C1)CCO").show()
