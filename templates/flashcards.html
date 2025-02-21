@@ -3,67 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Flashcards</title>
-    <style>
-        @page {
-            size: letter;
-            margin: 0;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        
-        .page {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 8.5in;
-            height: 11in;
-            page-break-after: always;
-        }
-
-        .flashcard_wrapper {
-            display: grid;
-            grid-template-columns: repeat(3, 2.5in);
-            grid-template-rows: repeat(3, 3.5in);
-            gap: 0.05in;
-        }
-
-        .flashcard {
-            width: 2.5in;
-            height: 3.5in;
-            border: 2px solid black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            text-align: center;
-            background: white;
-        }
-
-        .invisible_flashcard {
-            width: 2.5in;
-            height: 3.5in;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            text-align: center;
-            background: white;
-        }
-
-        .flashcard img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/flashcards.css") }}'>
 </head>
 <body>
 
