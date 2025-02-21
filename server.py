@@ -5,6 +5,7 @@ app = Flask(__name__)
 # Default value for the template
 card_titles = [["number1","number2","number3","number4","number5","number6","number7","number8","number9"],["number10","number11","number12","number13"]]
 filenumbers = [[1,2,3,4,5,6,7,8,9],[10,11,12,13]]
+filenumbers = [[str(filenumber) for filenumber in page] for page in filenumbers]
 
 @app.route('/')
 def index():

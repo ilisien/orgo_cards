@@ -70,7 +70,7 @@
     <div class="page">
         <div class="flashcard_wrapper">
             {% for filenumber in filenumbers[loop.index0] %}
-            <div class="flashcard"><img src="{{ url_for('static', filename='/images/back{filenumber}.png') }}" alt="Back {{filenumber}}"></div>
+            <div class="flashcard"><img src='{{ url_for("static", filename="/images/back"+filenumber+".png") }}' alt="Back {{filenumber}}"></div>
             {% endfor %}
         </div> 
     </div>
