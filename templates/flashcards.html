@@ -33,6 +33,7 @@
             display: grid;
             grid-template-columns: repeat(3, 2.5in);
             grid-template-rows: repeat(3, 3.5in);
+            gap: 0.05in;
         }
 
         .flashcard {
@@ -56,34 +57,24 @@
 <body>
 
     <!-- First Page: Fronts -->
+    {% for page in card_titles %}
     <div class="page">
         <div class="flashcard_wrapper">
-            <div class="flashcard">Front 1</div>
-            <div class="flashcard">Front 2</div>
-            <div class="flashcard">Front 3</div>
-            <div class="flashcard">Front 4</div>
-            <div class="flashcard">Front 5</div>
-            <div class="flashcard">Front 6</div>
-            <div class="flashcard">Front 7</div>
-            <div class="flashcard">Front 8</div>
-            <div class="flashcard">Front 9</div>
+            {% for card_title in page %}
+            <div class="flashcard">{{ card_title }}</div>
+            {% endfor %}
         </div>
     </div>
 
-    <!-- Second Page: Backs (Mirrored Order for Printing) -->
+    <!-- Second Page: Backs -->
     <div class="page">
         <div class="flashcard_wrapper">
-            <div class="flashcard"><img src="back9.png" alt="Back 9"></div>
-            <div class="flashcard"><img src="back8.png" alt="Back 8"></div>
-            <div class="flashcard"><img src="back7.png" alt="Back 7"></div>
-            <div class="flashcard"><img src="back6.png" alt="Back 6"></div>
-            <div class="flashcard"><img src="back5.png" alt="Back 5"></div>
-            <div class="flashcard"><img src="back4.png" alt="Back 4"></div>
-            <div class="flashcard"><img src="back3.png" alt="Back 3"></div>
-            <div class="flashcard"><img src="back2.png" alt="Back 2"></div>
-            <div class="flashcard"><img src="back1.png" alt="Back 1"></div>
+            {% for filenumber in filenumbers[loop.index0] %}
+            <div class="flashcard"><img src="{{ url_for('static', filename='/images/back{filenumber}.png') }}" alt="Back {{filenumber}}"></div>
+            {% endfor %}
         </div> 
     </div>
+    {% endfor %}
 
 </body>
 </html>
