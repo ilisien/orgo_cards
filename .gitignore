@@ -2,3 +2,4 @@ env/
 *.png
 *.pdf
 images/
+__pycache__/

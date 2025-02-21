@@ -48,6 +48,17 @@
             background: white;
         }
 
+        .invisible_flashcard {
+            width: 2.5in;
+            height: 3.5in;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            text-align: center;
+            background: white;
+        }
+
         .flashcard img {
             max-width: 100%;
             max-height: 100%;
@@ -70,7 +81,11 @@
     <div class="page">
         <div class="flashcard_wrapper">
             {% for filenumber in filenumbers[loop.index0] %}
+            {% if filenumber != "-1" %}
             <div class="flashcard"><img src='{{ url_for("static", filename="/images/back"+filenumber+".png") }}' alt="Back {{filenumber}}"></div>
+            {% else %}
+            <div class="invisible_flashcard"></div>
+            {% endif %}
             {% endfor %}
         </div> 
     </div>
