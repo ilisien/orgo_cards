@@ -27,13 +27,13 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 3.5in);
     grid-template-rows: repeat(3, 2.5in);
-    gap: 0.05in;
+    /*gap: 0.05in;*/
 }
 
 .flashcard {
     width: 3.5in;
     height: 2.5in;
-    border: 2px solid black;
+    /*border: 0.5px solid black;*/
     display: flex;
     justify-content: center;
     align-items: center;
