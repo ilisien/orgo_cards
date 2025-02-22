@@ -11,18 +11,22 @@
     {% for page in card_titles %}
     <div class="page">
         <div class="flashcard_wrapper">
-            {% for card_title in page %}
-            <div class="flashcard">{{ card_title }}</div>
+            {% for front in fronts[loop.index0] %}
+            {% if front != "" %}
+            <div class="flashcard"><img src='{{ url_for("static", filename=front) }}'></div>
+            {% else %}
+            <div class="invisible_flashcard"></div>
+            {% endif %}
             {% endfor %}
-        </div>
+        </div> 
     </div>
 
     <!-- Second Page: Backs -->
     <div class="page">
         <div class="flashcard_wrapper">
-            {% for filenumber in filenumbers[loop.index0] %}
-            {% if filenumber != "-1" %}
-            <div class="flashcard"><img src='{{ url_for("static", filename="/images/back"+filenumber+".png") }}' alt="Back {{filenumber}}"></div>
+            {% for back in backs[loop.index0] %}
+            {% if back != "" %}
+            <div class="flashcard"><img src='{{ url_for("static", filename=back) }}'></div>
             {% else %}
             <div class="invisible_flashcard"></div>
             {% endif %}
