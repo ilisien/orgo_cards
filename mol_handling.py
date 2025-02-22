@@ -1,9 +1,18 @@
-from rdkit import Chem
+from rdkit import Chem, RDLogger
 from rdkit.Chem import Draw
 from rdkit.Chem.inchi import MolToInchi, MolFromInchi
 from rdkit.Chem import AllChem
 import pubchempy as pcp
 from PIL import Image
+
+def is_valid_smiles(smiles_string):
+    # unfortunately rdkit doesn't return an actual error here, so a try/except block doesn't work
+    RDLogger.DisableLog('rdApp.*')
+    mol = Chem.MolFromSmiles(smiles_string)
+    if mol is None:
+        return False
+    else:
+        return True
 
 def smiles_to_iupac(smiles,synonyms_amount=3):
     """Convert a SMILES string to an IUPAC name."""

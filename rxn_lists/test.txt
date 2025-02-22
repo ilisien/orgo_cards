@@ -1,0 +1,4 @@
+CCCO>"SOCl_2"/"pyridine">chloropropane
+CCCO>"PBr_3"/"pyridine">bromopropane
+but-2-ene;"CH_2I_2">"Zn(Cu)"/"ether">CC1CC1C
+1-chloro-2,4,6-trinitrobenzene>"Na^+";"^-OH"/"H_2O">2,4,6-trinitrophenol
