@@ -35,11 +35,41 @@ body {
     height: 2.5in;
     /*border: 0.5px solid black;*/
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     font-size: 20px;
     text-align: center;
     background: white;
+    flex-direction: row;
+    ;
+}
+
+.card_image {
+    width: 30%;
+    height:min-content;
+    line-height: 0;
+    font-size: 12px;
+}
+
+.hidden {
+    color: white;
+    border-radius: 0.1in;
+    border: 2px solid black;
+}
+
+.nothidden {
+    width:40%;
+    font-size: 16px;
+}
+
+.hidden img {
+    visibility: hidden;
+}
+
+span.arrowlatex {
+    font-size: 20px;
+    height:min-content;
+    width:30%;
 }
 
 .invisible_flashcard {
