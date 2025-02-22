@@ -35,8 +35,6 @@ def draw_molecule(smiles):
     mol = Chem.MolFromSmiles(smiles)
     image =  Draw.MolToImage(mol)
     bbox = image.convert("L").point(lambda x: 0 if x > 250 else 255).getbbox()
-    image.convert("L").point(lambda x: 0 if x > 250 else 255).show()
-    print(bbox)
     cropped_image = image.crop(bbox)
     return cropped_image
 
