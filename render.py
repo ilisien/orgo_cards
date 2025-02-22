@@ -8,7 +8,7 @@ def generate_pdf():
         browser = p.chromium.launch()
         page = browser.new_page()
         page.goto(url, wait_until="networkidle")
-        page.pdf(path=output_file, format="A4")
+        page.pdf(path=output_file,landscape=True)
         browser.close()
 
     print(f"PDF saved as {output_file}")

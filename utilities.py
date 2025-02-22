@@ -1,8 +1,8 @@
-import requests, os
+import requests, os, time
 from PIL import Image
 from io import BytesIO
 
-def get_placeholder(width=250, height=350):
+def get_placeholder(width=350, height=250):
     """Downloads an image from Picsum and saves it to a file."""
     url = f"https://picsum.photos/{width}/{height}"
     response = requests.get(url)
@@ -20,6 +20,7 @@ def assemble_card_filesystem(card_title,front_img,back_img):
 def test_filesystem(card_titles):
     for ct in card_titles:
         assemble_card_filesystem(ct,get_placeholder(),get_placeholder())
+        time.sleep(1) #don't overwhelm picsum api
 
 def get_image_paths(card_title,return_which=None):
     # this probably shouldn't be so hardcoded but idk how to fix that atm

@@ -1,5 +1,5 @@
 @page {
-    size: letter;
+    size: letter landscape;
     margin: 0;
 }
 
@@ -18,21 +18,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 8.5in;
-    height: 11in;
+    width: 11in;
+    height: 8.5in;
     page-break-after: always;
 }
 
 .flashcard_wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 2.5in);
-    grid-template-rows: repeat(3, 3.5in);
+    grid-template-columns: repeat(3, 3.5in);
+    grid-template-rows: repeat(3, 2.5in);
     gap: 0.05in;
 }
 
 .flashcard {
-    width: 2.5in;
-    height: 3.5in;
+    width: 3.5in;
+    height: 2.5in;
     border: 2px solid black;
     display: flex;
     justify-content: center;
@@ -43,8 +43,8 @@ body {
 }
 
 .invisible_flashcard {
-    width: 2.5in;
-    height: 3.5in;
+    width: 3.5in;
+    height: 2.5in;
     display: flex;
     justify-content: center;
     align-items: center;
