@@ -25,17 +25,17 @@ class Reaction:
             iupac = smiles_to_iupac(rxn)[0].replace(" ","_")
             if not os.path.exists(f"static/images/{iupac}.png"):
                 draw_molecule(rxn).save(f"static/images/{iupac}.png")
-            time.sleep(1)
+            #time.sleep(0.25)
     
     def get_html_components(self,hide):
         return {
             "hide" : hide,
             "image_reactants" : [smiles_to_iupac(reactant)[0] for reactant in self.reactants if is_valid_smiles(reactant)],
-            "nonimage_reactants" : [reactant for reactant in self.reactants if not is_valid_smiles(reactant)],
+            "nonimage_reactants" : [subscript_numbers(reactant) for reactant in self.reactants if not is_valid_smiles(reactant)],
             "top_reagents" : self.reagents[0],
             "bottom_reagents" : self.reagents[1],
             "image_products" : [smiles_to_iupac(product)[0] for product in self.products if is_valid_smiles(product)],
-            "nonimage_products" : [product for product in self.products if not is_valid_smiles(product)],
+            "nonimage_products" : [subscript_numbers(product) for product in self.products if not is_valid_smiles(product)],
         }
 
     def all_html_components(self):

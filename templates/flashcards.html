@@ -14,28 +14,6 @@
     </script>
 </head>
 <body>
-    <div class="flashcard">
-        <div class="side">
-            <div class="card_image"> <!-- substrate -->
-                <img src='{{ url_for("static", filename="images/propan-1-ol.png") }}'>
-                <span class="compound_title">$$ \ce{1-propanol} $$</span>
-            </div>
-        </div>
-        <span class="arrowlatex">$$ \ce{->[SOCl_2][pyridine]} $$</span> <!-- reagent -->
-        <div class="side hidden">
-            <div class="card_image"> <!-- product -->
-                <img src='{{ url_for("static", filename="images/1-chloropropane.png") }}'>
-                <span class="compound_title">$$ \ce{chloropropane} $$</span>
-            </div>
-        </div>
-    </div>
-    <div class="flashcard">
-        <div class="card_image nothidden"> <!-- product -->
-            <img src='{{ url_for("static", filename="images/1-chloropropane.png") }}'>
-            <span class="compound_title">$$ \ce{chloropropane} $$</span>
-        </div>
-    </div>
-
     <!-- First Page: Fronts -->
     {% for page in phc %}
     <div class="page">
@@ -53,7 +31,7 @@
                     {% for iupac in card["image_reactants"]%}
                     <div class="card_image">
                         <img src='{{ url_for("static", filename="images/" + iupac + ".png") }}'>
-                        <p class="compound_title">{{iupac}}</p>
+                        <p class="compound_title">{{iupac | safe}}</p>
                     </div>
                     {% if loop.revindex != 1 %}
                     <span class="plus">+</span>
@@ -63,7 +41,7 @@
                     <span class="plus">+</span>
                     {% endif %}
                     {% for name in card["nonimage_reactants"]%}
-                    <p class="compound_title">{{name}}</p>
+                    <p class="compound_title">{{name | safe}}</p>
                     {% if loop.revindex != 1 %}
                     <span class="plus">+</span>
                     {% endif %}
@@ -88,7 +66,7 @@
                     {% for iupac in card["image_products"]%}
                     <div class="card_image">
                         <img src='{{ url_for("static", filename="images/" + iupac + ".png") }}'>
-                        <p class="compound_title">{{iupac}}</p>
+                        <p class="compound_title">{{iupac | safe}}</p>
                     </div>
                     {% if loop.revindex != 1 %}
                     <span class="plus">+</span>
@@ -98,7 +76,7 @@
                     <span class="plus">+</span>
                     {% endif %}
                     {% for name in card["nonimage_products"]%}
-                    <p class="compound_title">{{name}}</p>
+                    <p class="compound_title">{{name | safe}}</p>
                     {% if loop.revindex != 1 %}
                     <span class="plus">+</span>
                     {% endif %}
@@ -123,7 +101,7 @@
                     {% for iupac in card["image_reactants"]%}
                     <div class="card_image">
                         <img src='{{ url_for("static", filename="images/" + iupac + ".png") }}'>
-                        <p class="compound_title">$$ {{iupac}} $$</p>
+                        <p class="compound_title">{{iupac | safe}}</p>
                     </div>
                     {% if loop.revindex != 1 %}
                     <span class="plus">$$ + $$</span>
@@ -133,7 +111,7 @@
                     <span class="plus">$$ + $$</span>
                     {% endif %}
                     {% for name in card["nonimage_reactants"]%}
-                    <p class="compound_title">$$ {{name}} $$</p>
+                    <p class="compound_title">{{name | safe}}</p>
                     {% if loop.revindex != 1 %}
                     <span class="plus">$$ + $$</span>
                     {% endif %}
@@ -150,7 +128,7 @@
                     {% for iupac in card["image_products"]%}
                     <div class="card_image">
                         <img src='{{ url_for("static", filename="images/" + iupac + ".png") }}'>
-                        <p class="compound_title">$$ {{iupac}} $$</p>
+                        <p class="compound_title">{{iupac | safe}}</p>
                     </div>
                     {% if loop.revindex != 1 %}
                     <span class="plus">$$ + $$</span>
@@ -160,7 +138,7 @@
                     <span class="plus">$$ + $$</span>
                     {% endif %}
                     {% for name in card["nonimage_products"]%}
-                    <p class="compound_title">$$ {{name}} $$</p>
+                    <p class="compound_title">{{name | safe}}</p>
                     {% if loop.revindex != 1 %}
                     <span class="plus">$$ + $$</span>
                     {% endif %}
