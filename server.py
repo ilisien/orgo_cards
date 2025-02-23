@@ -1,18 +1,23 @@
 from flask import Flask, render_template, request
 from utilities import mirror_backs, generate_pagelists, test_filesystem
+from reactions import parse_reaction_file, Reaction
 
 app = Flask(__name__)
 
-# Default value for the template
-raw_titles = ["number1","number2","number3","number4","number5","number6","number7","number8","number9","number10","number11","number12","number13"]
+filename = "rxn_lists/test.txt"
+reactions = parse_reaction_file(filename)
+html_components = []
+for reaction in reactions:
+    html_components.extend(reaction.all_html_components())
 
-card_titles, fronts, backs = generate_pagelists(raw_titles)
+pagified_html_components = generate_pagelists(html_components)
+back_pagified_html_components = mirror_backs(pagified_html_components)
 
-print(card_titles, fronts, backs)
+print(pagified_html_components)
 
 @app.route('/')
 def index():
-    return render_template('flashcards.html', card_titles=card_titles,fronts=fronts,backs=backs)
+    return render_template('flashcards.html', phc=pagified_html_components, bphc=back_pagified_html_components)
 
 if __name__ == "__main__":
     app.run(debug=True)

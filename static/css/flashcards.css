@@ -41,14 +41,15 @@ body {
     text-align: center;
     background: white;
     flex-direction: row;
-    ;
 }
 
-.card_image {
+.side {
     width: 30%;
     height:min-content;
     line-height: 0;
     font-size: 12px;
+    display: flex;
+    flex-direction: column;
 }
 
 .hidden {

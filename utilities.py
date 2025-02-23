@@ -39,10 +39,8 @@ def mirror_backs(pagelists):
         pages.append([page[2],page[1],page[0],page[5],page[4],page[3],page[8],page[7],page[6]])
     return pages
 
-def generate_pagelists(cards):
-    while len(cards)%9 != 0:
-        cards.append("")
-    title_list = [[cards[page*9+card] for card in range(0,9)] for page in range(0,len(cards)//9)]
-    fronts = [[get_image_paths(title,"front") for title in page] for page in title_list]
-    backs = mirror_backs([[get_image_paths(title,"back") for title in page] for page in title_list])
-    return title_list, fronts, backs
+def generate_pagelists(card_dicts):
+    while len(card_dicts)%9 != 0:
+        card_dicts.append(None)
+    pagified_card_dicts = [[card_dicts[page*9+card] for card in range(0,9)] for page in range(0,len(card_dicts)//9)]
+    return pagified_card_dicts

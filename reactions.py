@@ -45,7 +45,7 @@ def format_for_compound_string(compound):
     if isinstance(compound, list):
         return [format_for_compound_string(element) for element in compound]
     elif compound[0] == '"':
-        return "&#8203;" + compound.replace('"',"")
+        return compound.replace('"',"")
     elif is_valid_smiles(compound):
         return compound
     else:
@@ -74,7 +74,7 @@ def parse_reaction_file(filename: str) -> List[Reaction]:
 
 
 if __name__ == "__main__":
-    filename = "rxn_lists/test.txt"  # Replace with actual filename
+    filename = "rxn_lists/test.txt"
     reactions = parse_reaction_file(filename)
     html_components = []
     for reaction in reactions:
