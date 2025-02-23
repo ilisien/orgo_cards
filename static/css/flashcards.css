@@ -41,15 +41,17 @@ body {
     text-align: center;
     background: white;
     flex-direction: row;
+    /*border-radius: 0.1in;
+    border: 1px solid black;*/
 }
 
 .side {
     width: 30%;
     height:min-content;
-    line-height: 0;
     font-size: 12px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .hidden {
@@ -65,6 +67,11 @@ body {
 
 .hidden img {
     visibility: hidden;
+}
+
+p.compound_title {
+    overflow-wrap: break-word;
+    margin: 5px;
 }
 
 span.arrowlatex {

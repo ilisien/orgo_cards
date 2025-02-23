@@ -1,6 +1,10 @@
 import requests, os, time
 from PIL import Image
 from io import BytesIO
+import re
+
+def subscript_numbers(text):
+    return re.sub(r'_(\d+)', r'<sub>\1</sub>', text)
 
 def get_placeholder(width=350, height=250):
     """Downloads an image from Picsum and saves it to a file."""

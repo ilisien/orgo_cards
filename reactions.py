@@ -3,6 +3,7 @@ from typing import List
 from rdkit import Chem
 from mol_handling import is_valid_smiles, iupac_to_smiles, draw_molecule, smiles_to_iupac
 from flask import url_for
+from utilities import subscript_numbers
 
 class Reaction:
     def __init__(self, reactants: List[str], reagents: List[List[str]], products: List[str]):

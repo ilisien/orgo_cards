@@ -55,9 +55,18 @@
                         <img src='{{ url_for("static", filename="images/" + iupac + ".png") }}'>
                         <p class="compound_title">{{iupac}}</p>
                     </div>
+                    {% if loop.revindex != 1 %}
+                    <span class="plus">+</span>
+                    {% endif %}
                     {% endfor %}
+                    {% if card["image_reactants"]|length > 0 and card["nonimage_reactants"]|length > 0 %}
+                    <span class="plus">+</span>
+                    {% endif %}
                     {% for name in card["nonimage_reactants"]%}
                     <p class="compound_title">{{name}}</p>
+                    {% if loop.revindex != 1 %}
+                    <span class="plus">+</span>
+                    {% endif %}
                     {% endfor %}
                 </div>
 
@@ -67,7 +76,7 @@
                 {% else %}
                 class="arrowlatex"
                 {% endif %}
-                >$$ \ce{->[{{ card["top_reagents"][0] }}][{{ card["bottom_reagents"][0] }}]} $$</span> <!-- reagent -->
+                >$$ \ce{->[{% for top_reagent in card["top_reagents"] %}{{ top_reagent }}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}][{% for bottom_reagent in card["bottom_reagents"] %}{{ bottom_reagent }}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}]} $$</span> <!-- reagent -->
 
                 <div
                 {% if card["hide"] == 2 %}
@@ -81,9 +90,18 @@
                         <img src='{{ url_for("static", filename="images/" + iupac + ".png") }}'>
                         <p class="compound_title">{{iupac}}</p>
                     </div>
+                    {% if loop.revindex != 1 %}
+                    <span class="plus">+</span>
+                    {% endif %}
                     {% endfor %}
+                    {% if card["image_products"]|length > 0 and card["nonimage_products"]|length > 0 %}
+                    <span class="plus">+</span>
+                    {% endif %}
                     {% for name in card["nonimage_products"]%}
                     <p class="compound_title">{{name}}</p>
+                    {% if loop.revindex != 1 %}
+                    <span class="plus">+</span>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -105,17 +123,26 @@
                     {% for iupac in card["image_reactants"]%}
                     <div class="card_image">
                         <img src='{{ url_for("static", filename="images/" + iupac + ".png") }}'>
-                        <p class="compound_title">{{iupac}}</p>
+                        <p class="compound_title">$$ {{iupac}} $$</p>
                     </div>
+                    {% if loop.revindex != 1 %}
+                    <span class="plus">$$ + $$</span>
+                    {% endif %}
                     {% endfor %}
+                    {% if card["image_reactants"]|length > 0 and card["nonimage_reactants"]|length > 0 %}
+                    <span class="plus">$$ + $$</span>
+                    {% endif %}
                     {% for name in card["nonimage_reactants"]%}
-                    <p class="compound_title">{{name}}</p>
+                    <p class="compound_title">$$ {{name}} $$</p>
+                    {% if loop.revindex != 1 %}
+                    <span class="plus">$$ + $$</span>
+                    {% endif %}
                     {% endfor %}
                 </div>
                 {% endif %}
                 
                 {% if card["hide"] == 1 %}
-                <span class="arrowlatex nothidden">$$ \ce{->[{{ card["top_reagents"][0] }}][{{ card["bottom_reagents"][0] }}]} $$</span> <!-- reagent -->
+                <span class="arrowlatex nothidden">$$ \ce{->[{% for top_reagent in card["top_reagents"] %}{{ top_reagent}}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}][{% for bottom_reagent in card["bottom_reagents"] %}{{ bottom_reagent}}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}]} $$</span> <!-- reagent -->
                 {% endif %}
 
                 {% if card["hide"] == 2 %}
@@ -123,11 +150,20 @@
                     {% for iupac in card["image_products"]%}
                     <div class="card_image">
                         <img src='{{ url_for("static", filename="images/" + iupac + ".png") }}'>
-                        <p class="compound_title">{{iupac}}</p>
+                        <p class="compound_title">$$ {{iupac}} $$</p>
                     </div>
+                    {% if loop.revindex != 1 %}
+                    <span class="plus">$$ + $$</span>
+                    {% endif %}
                     {% endfor %}
+                    {% if card["image_products"]|length > 0 and card["nonimage_products"]|length > 0 %}
+                    <span class="plus">$$ + $$</span>
+                    {% endif %}
                     {% for name in card["nonimage_products"]%}
-                    <p class="compound_title">{{name}}</p>
+                    <p class="compound_title">$$ {{name}} $$</p>
+                    {% if loop.revindex != 1 %}
+                    <span class="plus">$$ + $$</span>
+                    {% endif %}
                     {% endfor %}
                 </div>
                 {% endif %}
