@@ -69,6 +69,15 @@ body {
     visibility: hidden;
 }
 
+.hidden p {
+    visibility: hidden;
+}
+
+.hidden span {
+    visibility: hidden;
+}
+
+
 p.compound_title {
     overflow-wrap: break-word;
     margin: 5px;
