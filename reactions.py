@@ -60,6 +60,18 @@ def format_for_compound_string(compound):
             return "error at formatting from .txt file"
 
 def parse_reaction(line: str) -> Reaction:
+    if "'" in line:
+        parts = line.split("'")
+        if len(parts) == 3:
+            wildcards = parts[1].split("*")
+            return [parse_reaction(parts[0] + wildcard + parts[2]) for wildcard in wildcards1]
+        elif len(parts) == 5:
+            wildcards1 = parts[1].split("*")
+            wildcards2 = parts[3].split("*")
+            return [parse_reaction(parts[0] + wildcard + parts[2] + wildcards2[i] + parts[4]) for i, wildcard in enumerate(wildcards1)]
+        else:
+            return "it's time to make the parse_reaction function better"
+
     parts = line.strip().split('>')
     
     reactants = format_for_compound_string(parts[0].split(';'))
@@ -84,7 +96,11 @@ def parse_reaction_file(filename: str) -> List[Reaction]:
     with open(filename, 'r') as file:
         for line in file:
             if line.strip():
-                reactions.append(parse_reaction(line))
+                reaction = parse_reaction(line)
+                if isinstance(reaction,list):
+                    reactions.extend(reaction)
+                else:
+                    reactions.append(reaction)
     return reactions
 
 
