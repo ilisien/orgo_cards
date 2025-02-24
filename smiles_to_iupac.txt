@@ -5,3 +5,24 @@ CC=CC;but-2-ene
 CC1CC1C;1,2-dimethylcyclopropane
 C1=C(C=C(C(=C1[N+](=O)[O-])Cl)[N+](=O)[O-])[N+](=O)[O-];2-chloro-1,3,5-trinitrobenzene
 C1=C(C=C(C(=C1[N+](=O)[O-])O)[N+](=O)[O-])[N+](=O)[O-];2,4,6-trinitrophenol
+CC=C(C)C;2-methylbut-2-ene
+CCC(C)(Br)C;2-bromo-2-methylbutane
+C/C(C)=C(C)\C;2,3-dimethylbut-2-ene
+C[C@@](C)(Br)[C@@](C)(C)Br;2,3-dibromo-2,3-dimethylbutane
+C/C=C(C)/C;2-methylbut-2-ene
+CC(Br)C(C)(C)O;3-bromo-2-methylbutan-2-ol
+CCC(C)(C)O;2-methylbutan-2-ol
+CC(C)C(C)O;3-methylbutan-2-ol
+CCC(C)C;2-methylbutane
+CC1OC1(C)C;2,2,3-trimethyloxirane
+CC(O)C(C)(C)O;2-methylbutane-2,3-diol
+CC1C(C)(C)C1(Cl)Cl;1,1-dichloro-2,2,3-trimethylcyclopropane
+CC1CC1(C)C;1,1,2-trimethylcyclopropane
+CC1(C)OC1(C)C;2,2,3,3-tetramethyloxirane
+CC(C)(O)C(C)(C)O;2,3-dimethylbutane-2,3-diol
+CC/C(CC)=C(C)\C;3-ethyl-2-methylpent-2-ene
+CCC(=O)CC;pentan-3-one
+CC(C)=O;propan-2-one
+C=CCC;but-1-ene
+CCC(=O)O;propanoic acid
+CCC(O)(CC)C(C)(C)O;3-ethyl-2-methylpentane-2,3-diol

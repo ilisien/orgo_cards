@@ -63,5 +63,5 @@ if __name__ == "__main__":
     #new_smiles = iupac_to_smiles(iupac_name)
     #print(f"Reconstructed SMILES: {new_smiles}")
 
-    draw_molecule("CCCO").save("1-propanol.png")
-    draw_molecule("CCCCl").save("chloropropane.png")
+    print(iupac_to_smiles("Br2"))
+    draw_molecule("CC1(C)CC1[X]").save("test.png")

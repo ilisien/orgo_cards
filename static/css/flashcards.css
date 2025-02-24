@@ -27,13 +27,12 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 3.5in);
     grid-template-rows: repeat(3, 2.5in);
-    /*gap: 0.05in;*/
+    gap: 0.05in;
 }
 
 .flashcard {
     width: 3.5in;
     height: 2.5in;
-    /*border: 0.5px solid black;*/
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -41,8 +40,7 @@ body {
     text-align: center;
     background: white;
     flex-direction: row;
-    /*border-radius: 0.1in;
-    border: 1px solid black;*/
+    border: 1px solid black;
 }
 
 .side {
@@ -61,9 +59,25 @@ body {
 }
 
 .nothidden {
-    width:40%;
-    font-size: 16px;
+    width:70%;
+    font-size: 14px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+.nothidden .card_image img {
+    max-height: 1.25in;
+}
+
+.side .plus {
+    padding:5px;
+}
+
+.nothidden .plus {
+    padding:10px;
+}
+
 
 .hidden img {
     visibility: hidden;
@@ -84,9 +98,10 @@ p.compound_title {
 }
 
 span.arrowlatex {
-    font-size: 20px;
     height:min-content;
     width:30%;
+    min-width: 0;
+    font-size: 20px;
 }
 
 .invisible_flashcard {

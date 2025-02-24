@@ -1,0 +1,16 @@
+CC=C(C)C>"HBr"|"ether">CCC(C)(Br)C
+C/C(C)=C(C)\C>"Br_2"|"CH_2Cl_2">C[C@@](C)(Br)[C@@](C)(C)Br
+C/C=C(C)/C>"Br_2"|"H_2O">CC(Br)C(C)(C)O;"HBr"
+C/C=C(C)/C>"Hg(OAc)_2";"H_2O/THF"|"NaBH_4">CCC(C)(C)O
+C/C=C(C)/C>"BH_3";"THF"|"H_2O_2";"OH^-">CC(C)C(C)O
+C/C=C(C)/C>"H_2"|"Pd/C or PtO_2">CCC(C)C
+C/C=C(C)/C>"peroxyacid"|"(m-CPBA)">CC1OC1(C)C
+C/C=C(C)/C>"1. OsO_4"|"2.";"NaHSO_3";"H_2O">CC(O)C(C)(C)O
+C/C=C(C)/C>"1. OsO_4"|"2.";"OsO_4";"NMO">CC(O)C(C)(C)O
+C/C=C(C)/C;"CHCl_3">"KOH">CC1C(C)(C)C1(Cl)Cl
+C/C=C(C)/C;"CH_2I_2">"Zn(Cu)"|"ether">CC1CC1(C)C
+CC1(C)OC1(C)C>"H_3O^+">CC(C)(O)C(C)(C)O
+CC/C(CC)=C(C)\C>"1.";"O_3"|"2.";"Zn/H_3O^+">CCC(=O)CC;CC(C)=O
+CC/C(CC)=C(C)\C>"KMnO_4";"H_3O^+">CCC(=O)CC;CC(C)=O
+C=CCC>"KMnO_4";"H_3O^+">CCC(=O)O;"CO_2"
+CCC(O)(CC)C(C)(C)O>"HIO_4"|"H_2O">CCC(=O)CC;CC(C)=O

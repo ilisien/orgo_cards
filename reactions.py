@@ -59,7 +59,7 @@ def parse_reaction(line: str) -> Reaction:
     parts = line.strip().split('>')
     
     reactants = format_for_compound_string(parts[0].split(';'))
-    reagents = format_for_compound_string([p.split(';') for p in parts[1].split('/')] if '/' in parts[1] else [parts[1].split(';'), []])
+    reagents = format_for_compound_string([p.split(';') for p in parts[1].split('|')] if '|' in parts[1] else [parts[1].split(';'), []])
     products = format_for_compound_string(parts[2].split(';'))
     
     return Reaction(reactants, reagents, products)
