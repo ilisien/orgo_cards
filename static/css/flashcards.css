@@ -49,6 +49,7 @@ body {
     align-items: center;
     text-align: center;
     height: 85%;
+    width: 100%;
 }
 
 .primary {
@@ -65,6 +66,52 @@ body {
     justify-content: space-around;
 }
 
+.reagent_arrow_wrapper {
+    max-width: 50%;
+}
+
+.arrow {
+    position: relative;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 0px 1fr;
+    margin: 0;
+}
+
+.arrowhead {
+    width: 5px;
+    height: 5px;
+    right:0;
+    top:0;
+    transform: rotate(45deg);
+    border: 1px solid black;
+    border-bottom:0;
+    border-left:0;
+    position: absolute;
+}
+
+.arrowhead_placeholder {
+    width: 5px;
+    height: 5px;
+    transform: rotate(45deg);
+}
+
+.arrowshaft {
+    width:100%;
+    border:1px solid black;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: black;
+}
+
+span.reagent_text {
+    font-size:14px;
+    line-height: 0;
+}
+
 .hidden {
     color: white;
     border-radius: 0.1in;
@@ -72,7 +119,7 @@ body {
 }
 
 .nothidden {
-    width:70%;
+    width: 70%;
     font-size: 14px;
     flex-direction: row;
     justify-content: center;

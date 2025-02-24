@@ -14,6 +14,7 @@
     </script>
 </head>
 <body>
+
     <!-- First Page: Fronts -->
     {% for page in phc %}
     <div class="page">
@@ -49,13 +50,16 @@
                         {% endfor %}
                     </div>
 
-                    <span 
+                    <div
                     {% if card["hide"] == 1 %}
-                    class="arrowlatex hidden"
+                    class="reagent_arrow_wrapper hidden"
                     {% else %}
-                    class="arrowlatex"
-                    {% endif %}
-                    >$$ \ce{->[{% for top_reagent in card["top_reagents"] %}{{ top_reagent }}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}][{% for bottom_reagent in card["bottom_reagents"] %}{{ bottom_reagent }}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}]} $$</span> <!-- reagent -->
+                    class="reagent_arrow_wrapper"
+                    {% endif %}>
+                        <span class="reagent_text">{% for top_reagent in card["top_reagents"] %}{{ top_reagent }}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}</span>
+                        <div class="arrow"><span class="arrowhead_placeholder"></span><span class="arrowshaft"></span><span class="arrowhead"></span></div>
+                        <span class="reagent_text">{% for bottom_reagent in card["bottom_reagents"] %}{{ bottom_reagent}}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}</span>
+                    </div>
 
                     <div
                     {% if card["hide"] == 2 %}
@@ -128,8 +132,13 @@
                     {% endif %}
                     
                     {% if card["hide"] == 1 %}
-                    <span class="arrowlatex nothidden">$$ \ce{->[{% for top_reagent in card["top_reagents"] %}{{ top_reagent}}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}][{% for bottom_reagent in card["bottom_reagents"] %}{{ bottom_reagent}}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}]} $$</span> <!-- reagent -->
+                    <div class="reagent_arrow_wrapper nothidden">
+                        <span class="reagent_text">{% for top_reagent in card["top_reagents"] %}{{ top_reagent }}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}</span>
+                        <div class="arrow"><span class="arrowhead_placeholder"></span><span class="arrowshaft"></span><span class="arrowhead"></span></div>
+                        <span class="reagent_text">{% for bottom_reagent in card["bottom_reagents"] %}{{ bottom_reagent}}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}</span>
+                    </div>
                     {% endif %}
+
 
                     {% if card["hide"] == 2 %}
                     <div class="side nothidden">
