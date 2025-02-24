@@ -4,7 +4,8 @@ from reactions import parse_reaction_file, Reaction
 
 app = Flask(__name__)
 
-filename = "rxn_lists/openstax/chapter8.txt"
+#filename = "rxn_lists/openstax/chapter8.txt"
+filename = "rxn_lists/test.txt"
 reactions = parse_reaction_file(filename)
 html_components = []
 for reaction in reactions:

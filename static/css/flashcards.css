@@ -34,13 +34,26 @@ body {
     width: 3.5in;
     height: 2.5in;
     display: flex;
+    font-size: 20px;
+    background: white;
+    flex-direction: column;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_wrapper {
+    display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    font-size: 20px;
     text-align: center;
-    background: white;
-    flex-direction: row;
-    border: 1px solid black;
+    height: 85%;
+}
+
+.primary {
+    font-size: 14px;
+    white-space-collapse: preserve;
 }
 
 .side {
