@@ -45,7 +45,7 @@ body {
 .main_wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     height: 85%;
@@ -97,8 +97,8 @@ body {
 }
 
 .arrowshaft {
-    width:100%;
-    border:1px solid black;
+    width: 100%;
+    border: 1px solid black;
     border-top: 0;
     border-left: 0;
     border-right: 0;
@@ -137,9 +137,21 @@ p.reagent_text {
     flex: 0 1 30%;
 }
 
+.reagent_arrow_wrapper.nothidden {
+    font-size: 18px;
+    flex: 0 1 50%;
+}
+
+.main_wrapper:has(.nothidden) {
+    justify-content: center;
+}
+
+.nothidden.side {
+    flex: 0 0 60%;
+}
+
 .nothidden p.reagent_text {
     font-size: 18px;
-    line-height: normal;
 }
 
 .nothidden .card_image img {
