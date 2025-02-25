@@ -49,7 +49,7 @@ body {
     align-items: center;
     text-align: center;
     height: 85%;
-    width: 100%;
+    width: 90%;
 }
 
 .primary {
@@ -58,16 +58,12 @@ body {
 }
 
 .side {
-    width: 30%;
     height:min-content;
     font-size: 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
-
-.reagent_arrow_wrapper {
-    max-width: 50%;
+    flex: 0 0 30%;
 }
 
 .arrow {
@@ -107,9 +103,13 @@ body {
     background-color: black;
 }
 
-span.reagent_text {
+p.reagent_text {
     font-size:14px;
-    line-height: 0;
+    /*line-height: 0;*/
+    /*max-height:10px;*/
+    text-wrap: wrap;
+    text-align: center;
+    line-height: 7px;
 }
 
 .hidden {
@@ -126,6 +126,19 @@ span.reagent_text {
     align-items: center;
 }
 
+.reagent_arrow_wrapper {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 20%;
+    flex: 0 1 30%;
+}
+
+.nothidden p.reagent_text {
+    font-size: 18px;
+    line-height: normal;
+}
+
 .nothidden .card_image img {
     max-height: 1.25in;
 }
@@ -135,7 +148,7 @@ span.reagent_text {
 }
 
 .nothidden .plus {
-    padding:10px;
+    padding: 10px;
 }
 
 
@@ -151,17 +164,9 @@ span.reagent_text {
     visibility: hidden;
 }
 
-
 p.compound_title {
     overflow-wrap: break-word;
     margin: 5px;
-}
-
-span.arrowlatex {
-    height:min-content;
-    width:30%;
-    min-width: 0;
-    font-size: 20px;
 }
 
 .invisible_flashcard {

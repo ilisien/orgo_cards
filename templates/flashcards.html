@@ -56,9 +56,9 @@
                     {% else %}
                     class="reagent_arrow_wrapper"
                     {% endif %}>
-                        <span class="reagent_text">{% for top_reagent in card["top_reagents"] %}{{ top_reagent }}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}</span>
+                        <p class="reagent_text">{% for top_reagent in card["top_reagents"] %}{{ top_reagent | safe }}{% if loop.revindex != 1 and top_reagent[-1] != "." %}, {% elif loop.revindex != 1 and top_reagent[-1] == "." %}  {% endif %}{% endfor %}</p>
                         <div class="arrow"><span class="arrowhead_placeholder"></span><span class="arrowshaft"></span><span class="arrowhead"></span></div>
-                        <span class="reagent_text">{% for bottom_reagent in card["bottom_reagents"] %}{{ bottom_reagent}}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}</span>
+                        <p class="reagent_text">{% for bottom_reagent in card["bottom_reagents"] %}{{ bottom_reagent | safe }}{% if loop.revindex != 1 and bottom_reagent[-1] != "." %}, {% elif loop.revindex != 1 and bottom_reagent[-1] == "." %}  {% endif %}{% endfor %}</p>
                     </div>
 
                     <div
@@ -116,16 +116,16 @@
                             <p class="compound_title">{{iupac | safe}}</p>
                         </div>
                         {% if loop.revindex != 1 %}
-                        <span class="plus">$$ + $$</span>
+                        <span class="plus">+</span>
                         {% endif %}
                         {% endfor %}
                         {% if card["image_reactants"]|length > 0 and card["nonimage_reactants"]|length > 0 %}
-                        <span class="plus">$$ + $$</span>
+                        <span class="plus">+</span>
                         {% endif %}
                         {% for name in card["nonimage_reactants"]%}
                         <p class="compound_title">{{name | safe}}</p>
                         {% if loop.revindex != 1 %}
-                        <span class="plus">$$ + $$</span>
+                        <span class="plus">+</span>
                         {% endif %}
                         {% endfor %}
                     </div>
@@ -133,9 +133,9 @@
                     
                     {% if card["hide"] == 1 %}
                     <div class="reagent_arrow_wrapper nothidden">
-                        <span class="reagent_text">{% for top_reagent in card["top_reagents"] %}{{ top_reagent }}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}</span>
+                        <span class="reagent_text">{% for top_reagent in card["top_reagents"] %}{{ top_reagent | safe }}{% if loop.revindex != 1 and top_reagent[-1] != "." %}, {% elif loop.revindex != 1 and top_reagent[-1] == "." %}  {% endif %}{% endfor %}</span>
                         <div class="arrow"><span class="arrowhead_placeholder"></span><span class="arrowshaft"></span><span class="arrowhead"></span></div>
-                        <span class="reagent_text">{% for bottom_reagent in card["bottom_reagents"] %}{{ bottom_reagent}}{% if loop.revindex != 1 %}{{"{}"}}\:{% endif %}{% endfor %}</span>
+                        <span class="reagent_text">{% for bottom_reagent in card["bottom_reagents"] %}{{ bottom_reagent | safe }}{% if loop.revindex != 1 and bottom_reagent[-1] != "." %}, {% elif loop.revindex != 1 and bottom_reagent[-1] == "." %}  {% endif %}{% endfor %}</span>
                     </div>
                     {% endif %}
 
@@ -148,16 +148,16 @@
                             <p class="compound_title">{{iupac | safe}}</p>
                         </div>
                         {% if loop.revindex != 1 %}
-                        <span class="plus">$$ + $$</span>
+                        <span class="plus">+</span>
                         {% endif %}
                         {% endfor %}
                         {% if card["image_products"]|length > 0 and card["nonimage_products"]|length > 0 %}
-                        <span class="plus">$$ + $$</span>
+                        <span class="plus">+</span>
                         {% endif %}
                         {% for name in card["nonimage_products"]%}
                         <p class="compound_title">{{name | safe}}</p>
                         {% if loop.revindex != 1 %}
-                        <span class="plus">$$ + $$</span>
+                        <span class="plus">+</span>
                         {% endif %}
                         {% endfor %}
                     </div>

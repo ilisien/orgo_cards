@@ -3,7 +3,7 @@ from typing import List
 from rdkit import Chem
 from mol_handling import is_valid_smiles, iupac_to_smiles, draw_molecule, smiles_to_iupac
 from flask import url_for
-from utilities import subscript_numbers
+from utilities import string_script
 
 class Reaction:
     def __init__(self, reactants: List[str], reagents: List[List[str]], products: List[str], front_description, back_description):
@@ -33,11 +33,11 @@ class Reaction:
         return {
             "hide" : hide,
             "image_reactants" : [smiles_to_iupac(reactant)[0] for reactant in self.reactants if is_valid_smiles(reactant)],
-            "nonimage_reactants" : [subscript_numbers(reactant) for reactant in self.reactants if not is_valid_smiles(reactant)],
-            "top_reagents" : self.reagents[0],
-            "bottom_reagents" : self.reagents[1],
+            "nonimage_reactants" : [string_script(reactant) for reactant in self.reactants if not is_valid_smiles(reactant)],
+            "top_reagents" : [string_script(reagent) for reagent in self.reagents[0]],
+            "bottom_reagents" : [string_script(reagent) for reagent in self.reagents[1]],
             "image_products" : [smiles_to_iupac(product)[0] for product in self.products if is_valid_smiles(product)],
-            "nonimage_products" : [subscript_numbers(product) for product in self.products if not is_valid_smiles(product)],
+            "nonimage_products" : [string_script(product) for product in self.products if not is_valid_smiles(product)],
             "front_description" : self.front_description,
             "back_description" : self.back_description
         }
