@@ -74,6 +74,8 @@ body {
     align-items: center;
     grid-template-columns: 0px 1fr;
     margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .arrowhead {
@@ -109,7 +111,8 @@ p.reagent_text {
     /*max-height:10px;*/
     text-wrap: wrap;
     text-align: center;
-    line-height: 7px;
+    margin:0;
+    padding:0;
 }
 
 .hidden {
