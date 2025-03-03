@@ -1,0 +1,3 @@
+CC(Br)C(C)Br>"2 KOH";"EtOH"|"or 2 NaNH_2";"NH_3">CC#CC
+C/C=C(C)\Br>"KOH";"EtOH"|"or NaNH_2";"NH_3">CC#CC
+C#C>"1.";"NaNH_2"|"2.";"CH_3CH_2Br">"HC≡CCH_2CH_3"

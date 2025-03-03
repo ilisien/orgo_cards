@@ -29,3 +29,7 @@ CC(C)=O;propan-2-one
 C=CCC;but-1-ene
 CCC(=O)O;propanoic acid
 CCC(O)(CC)C(C)(C)O;3-ethyl-2-methylpentane-2,3-diol
+CC(Br)C(C)Br;2,3-dibromobutane
+CC#CC;but-2-yne
+C/C=C(C)\Br;(Z)-2-bromobut-2-ene
+C#C;acetylene

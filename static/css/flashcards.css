@@ -118,7 +118,7 @@ p.reagent_text {
 .hidden {
     color: white;
     border-radius: 0.1in;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .nothidden {
